@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #idtexto{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola</h1>
+    <button onclick="ejecutar()" >hola</button>
+    <input type="text" id="id"></input>
+    <br>
+    <br>
+    <label id="idtexto">no existe</label>
+
+    <script>
+        function ejecutar(){
+            let texto = document.getElementById("id").value;
+            let text = document.getElementById("id").addEventListener("input", function(){
+                document.getElementById("idtexto").style.display = 'none';
+            });
+            if (texto !== "") {
+                alert("usted cargo " + texto);
+                console.log("usetd a cargado "+texto);
+
+            } else {
+                document.getElementById("idtexto").style.display = 'block';
+                document.getElementById("idtexto").style.backgroundColor = 'yellow';
+                document.getElementById("idtexto").style.color = 'red';
+                document.getElementById("idtexto").innerHTML = " cargue algo  por favor";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
